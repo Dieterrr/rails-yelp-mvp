@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3"></div>
+
+<h3>Restaurants#show</h3>
+
+<h1><%= @restaurant.name %></h1>
+<h2><%= @restaurant.address %></h2>
+<h2><%= @restaurant.category %></h2>
+<h2><%= @restaurant.phone_number %></h2>
+
+<h2>Write a review:</h2>
+
+
+
+<h2>Reviews:</h2>
+<% @restaurant.reviews.all.each do |r| %>
+<li><%= r.content %></li>
+<% end %>
+
+  </div>
+</div>
+
