@@ -1,9 +1,15 @@
-<h1>Restaurants#index</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Restaurants#index</h1>
 
-<ul>
+      <ul>
 
-<% @restaurants.each do |restaurant| %>
-<li> <%= restaurant.name %> <%= link_to "See details", @restaurant, class: "btn btn-primary"%></li>
-<% end %>
-</ul>
+        <% @restaurants.each do |restaurant| %>
+        <li> <%= restaurant.name %> <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%></li>
+        <% end %>
+      </ul>
 
+    </div>
+  </div>
+</div>

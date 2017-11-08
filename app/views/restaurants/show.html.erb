@@ -1,23 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3"></div>
+    <div class="col-md-8 col-md-offset-2">
 
-<h3>Restaurants#show</h3>
+      <h3>Restaurant:</h3>
 
-<h1><%= @restaurant.name %></h1>
-<h2><%= @restaurant.address %></h2>
-<h2><%= @restaurant.category %></h2>
-<h2><%= @restaurant.phone_number %></h2>
+      <h1><%= @restaurant.name %></h1>
+      <h2><%= @restaurant.address %></h2>
+      <h2><%= @restaurant.category %></h2>
+      <h2><%= @restaurant.phone_number %></h2>
 
-<h2>Write a review:</h2>
+      <h2>Write a review:</h2>
+      <%= link_to "Write Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
 
+      <h2>Reviews:</h2>
+      <% @restaurant.reviews.all.each do |r| %>
+      <li><%= r.content %></li>
+      <% end %>
 
-
-<h2>Reviews:</h2>
-<% @restaurant.reviews.all.each do |r| %>
-<li><%= r.content %></li>
-<% end %>
-
+      <br>
+      Go back home: <%= link_to "Home", root_path, class: "btn btn-primary"%>
+    </div>
   </div>
 </div>
-
